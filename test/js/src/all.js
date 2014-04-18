@@ -42,7 +42,6 @@ test('ft', function (assert) {
 });
 
 test('tf', function (assert) {
-	console.log(recquire_t);
 	var recquire = recquire_t('test-namespace', 'index.js', true, false);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -1);
@@ -135,7 +134,6 @@ test('ft-2', function (assert) {
 });
 
 test('tf-2', function (assert) {
-	console.log(recquire_t);
 	var recquire = recquire_t('test-namespace', 'index.js', true, false);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -2);
