@@ -1,6 +1,6 @@
 {
   "name": "recquire",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Recursive require for node",
   "main": "js/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/aureooms/recquire/issues"
   },
-  "homepage": "https://github.com/aureooms/recquire",
+  "homepage": "https://aureooms.github.io/recquire",
   "dependencies": {
     "cli-color": "^0.2.3",
     "node.extend": "^1.0.10"
