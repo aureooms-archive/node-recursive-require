@@ -1,4 +1,4 @@
-recquire
+[recquire](http://aureooms.github.io/recquire)
 ========
 
 Recursive require for node
