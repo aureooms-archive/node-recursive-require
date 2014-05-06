@@ -1,4 +1,4 @@
-var recquire_t = function(name, index, rec, flat) {
+var recquire_t = function(name, index, rec, flat, debug) {
 
 	var fs = require('fs');
 	var util = require('util');
@@ -19,8 +19,9 @@ var recquire_t = function(name, index, rec, flat) {
 			);
 		};
 	};
-	var info = msg_t('info', clc.blue);
-	var action = msg_t('action', clc.magenta);
+	
+	var info = debug ? msg_t('info', clc.blue) : function(){};
+	var action = debug ? msg_t('action', clc.magenta) : function(){};
 
 	var recquire = function(dir, exports, level) {
 		fs.readdirSync(dir).forEach(function(file) {

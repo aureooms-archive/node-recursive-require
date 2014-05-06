@@ -1,6 +1,6 @@
 
 test('ff', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', false, false);
+	var recquire = recquire_t('test-namespace', 'index.js', false, false, true);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -1);
 
