@@ -1,6 +1,6 @@
 {
   "name": "recquire",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "recursive require for node",
   "main": "js/index.js",
   "scripts": {

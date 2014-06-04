@@ -1,4 +1,4 @@
-var recquire_t = function(name, index, rec, flat, debug) {
+var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 
 	var fs = require('fs');
 	var util = require('util');
@@ -25,6 +25,9 @@ var recquire_t = function(name, index, rec, flat, debug) {
 
 	var recquire = function(dir, exports, level) {
 		fs.readdirSync(dir).forEach(function(file) {
+
+			if (file === intro || file === outro) return;
+
 			var path = dir + file;
 			if (fs.lstatSync(path).isDirectory()) {
 				if (fs.existsSync(path + '/' + index)) {
