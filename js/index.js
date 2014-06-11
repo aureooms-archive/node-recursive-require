@@ -63,7 +63,7 @@ var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 				}
 
 			}
-			else if (level >= 0 && file.match(/.+\.js/g) !== null && file !== index) {
+			else if (level >= 0 && file.match(/.+\.js$/g) !== null && file !== index) {
 
 				if(flat){
 
