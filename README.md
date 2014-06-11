@@ -7,3 +7,4 @@ Recursive require for node
 [![Coverage Status](https://coveralls.io/repos/aureooms/recquire/badge.png)](https://coveralls.io/r/aureooms/recquire)
 [![Dependencies Status](https://david-dm.org/aureooms/recquire.png)](https://david-dm.org/aureooms/recquire#info=dependencies)
 [![devDependencies Status](https://david-dm.org/aureooms/recquire/dev-status.png)](https://david-dm.org/aureooms/recquire#info=devDependencies)
+[![Code Climate](https://codeclimate.com/github/aureooms/recquire.png)](https://codeclimate.com/github/aureooms/recquire)

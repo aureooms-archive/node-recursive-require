@@ -1,3 +1,19 @@
+/**
+ * Recquire template.
+ * 
+ * @param name name of global namespace
+ * @param index name of index files
+ * @param intro name of intro files
+ * @param outro name of outro files
+ * @param rec whether dirs should have their own namespace
+ * @param flat whether files should have their own namespace
+ * @param debug flag whether or not debug messages should be printed
+ * 
+ * 
+ */
+
+
+
 var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 
 	var fs = require('fs');
