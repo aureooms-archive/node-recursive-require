@@ -1,36 +1,36 @@
 {
-  "name": "recquire",
-  "version": "0.1.0",
-  "description": "recursive require for node",
-  "main": "js/index.js",
-  "scripts": {
-    "test": "node test/js/run.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://aureooms@github.com/aureooms/recquire.git"
-  },
-  "keywords": [
-    "node",
-    "recursive",
-    "require",
-    "auto"
-  ],
-  "author": "Ooms Aurélien <aurelien.ooms@gmail.com> (http://aureooms.wolkom.net/)",
-  "license": "GPL v2",
-  "bugs": {
-    "url": "https://github.com/aureooms/recquire/issues"
-  },
-  "homepage": "https://aureooms.github.io/recquire",
-  "dependencies": {
-    "cli-color": "^0.3.2",
-    "node.extend": "^1.0.10"
-  },
-  "devDependencies": {
-    "optimist": "^0.6.1",
-    "codeclimate-test-reporter": "0.0.3",
-    "qunit": "^0.6.3",
-    "istanbul": "^0.2.11",
-    "coveralls": "^2.10.0"
-  }
+	"version": "0.1.1",
+	"keywords": [
+		"node",
+		"recursive",
+		"require",
+		"auto"
+	],
+	"name": "recquire",
+	"homepage": "https://aureooms.github.io/recquire",
+	"devDependencies": {
+		"qunit": "^0.6.3",
+		"codeclimate-test-reporter": "0.0.3",
+		"coveralls": "^2.10.0",
+		"istanbul": "^0.2.11",
+		"optimist": "^0.6.1"
+	},
+	"dependencies": {
+		"cli-color": "^0.3.2",
+		"node.extend": "^1.0.10"
+	},
+	"main": "js/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://aureooms@github.com/aureooms/recquire.git"
+	},
+	"author": "Ooms Aur\u00e9lien <aurelien.ooms@gmail.com> (http://aureooms.wolkom.net/)",
+	"bugs": {
+		"url": "https://github.com/aureooms/recquire/issues"
+	},
+	"scripts": {
+		"test": "node test/js/run.js"
+	},
+	"license": "GPL v2",
+	"description": "recursive require for node"
 }
