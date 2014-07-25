@@ -62,7 +62,17 @@ var recquire_t = function(opt) {
 	var info = opt.debug ? msg_t('info', clc.blue) : function(){};
 	var action = opt.debug ? msg_t('action', clc.magenta) : function(){};
 
-	var recquire = function(dir, exports, level) {
+	var dflt_action_handler = function(path, fn, args){
+		args.push(require(path));
+		fn.apply(null, args);
+	};
+
+	var recquire = function(dir, exports, level, handler) {
+
+		if (handler === undefined) {
+			handler = dflt_action_handler;
+		}
+
 		fs.readdirSync(dir).forEach(function(file) {
 
 			if (file === opt.intro || file === opt.outro) return;
@@ -75,14 +85,14 @@ var recquire_t = function(opt) {
 						info("index file found in '%s'", path);
 						action("@ exports['%s'] = require('%s');", file, path);
 
-						assign(exports, file, require(path));
+						handler(path, assign, [exports, file]);
 					}
 					else{
 						// DEBUG
 						info("index file found in '%s'", path);
 						action("@ extend(true, exports, require('%s'));", path);
 
-						extend(true, exports, require(path));
+						handler(path, extend, [true, exports]);
 					}
 				}
 				else{
@@ -98,7 +108,7 @@ var recquire_t = function(opt) {
 						level + 1
 					);
 
-					recquire(path + '/', target, level + 1);
+					recquire(path + '/', target, level + 1, handler);
 				}
 
 			}
@@ -110,7 +120,7 @@ var recquire_t = function(opt) {
 					info(".js file '%s'", path);
 					action("@ extend(true, exports, require('%s'));", path);
 
-					extend(true, exports, require(path));
+					handler(path, extend, [true, exports]);
 				}
 				else{
 					var name = file.substr(0, file.length - 3);
@@ -119,7 +129,7 @@ var recquire_t = function(opt) {
 					info(".js file '%s'", path);
 					action("@ exports['%s'] = require('%s');", name, path);
 
-					assign(exports, name, require(path));
+					handler(path, assign, [exports, name]);
 				}
 			}
 		});

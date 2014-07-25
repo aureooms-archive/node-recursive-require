@@ -265,3 +265,49 @@ test('tt-2', function (assert) {
 	deepEqual(namespace, ref, 'check reference');
 });
 
+test('ft-handler', function (assert) {
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : false,
+		flat : true,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
+	var namespace = {};
+
+	var actions = [];
+
+	var handler = function(path, fn, args){
+		actions.push(arguments);
+	};
+
+	recquire(__dirname + '/test-namespace/', namespace, -1, handler);
+
+	var include = function(path, fn, args){
+		args.push(require(path));
+		fn.apply(null, args);
+	};
+
+	var include_fwd = function(args){
+		include.apply(null, args);
+	};
+
+	actions.forEach(include_fwd);
+
+	var ref = {
+		prop1 : true,
+		prop2 : true,
+		file3 : {
+			prop3 : true
+		},
+		file4 : {
+			prop4 : true
+		}
+	};
+
+	deepEqual(namespace, ref, 'check reference');
+});
+
