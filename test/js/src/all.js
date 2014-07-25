@@ -1,6 +1,25 @@
 
+var dflt = {
+	name : undefined,
+	index : 'index.js',
+	intro : 'intro.js',
+	outro : 'outro.js',
+	rec : true,
+	flat : true,
+	debug : false
+};
+
 test('ff', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', false, false, true);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : false,
+		flat : false,
+		debug : true
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -1);
 
@@ -23,7 +42,16 @@ test('ff', function (assert) {
 });
 
 test('ft', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', false, true);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : false,
+		flat : true,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -1);
 
@@ -42,7 +70,16 @@ test('ft', function (assert) {
 });
 
 test('tf', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', true, false);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : true,
+		flat : false,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -1);
 
@@ -71,7 +108,16 @@ test('tf', function (assert) {
 });
 
 test('tt', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', true, true);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : true,
+		flat : true,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -1);
 
@@ -96,7 +142,16 @@ test('tt', function (assert) {
 });
 
 test('ff-2', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', false, false);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : false,
+		flat : false,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -2);
 
@@ -116,7 +171,16 @@ test('ff-2', function (assert) {
 });
 
 test('ft-2', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', false, true);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : false,
+		flat : true,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -2);
 
@@ -134,7 +198,16 @@ test('ft-2', function (assert) {
 });
 
 test('tf-2', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', true, false);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : true,
+		flat : false,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -2);
 
@@ -160,7 +233,16 @@ test('tf-2', function (assert) {
 });
 
 test('tt-2', function (assert) {
-	var recquire = recquire_t('test-namespace', 'index.js', 'intro.js', 'outro.js', true, true);
+	var opt = {
+		name : 'test-namespace',
+		index : 'index.js',
+		intro : 'intro.js',
+		outro : 'outro.js',
+		rec : true,
+		flat : true,
+		debug : undefined
+	};
+	var recquire = recquire_t(opt);
 	var namespace = {};
 	recquire(__dirname + '/test-namespace/', namespace, -2);
 

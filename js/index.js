@@ -1,5 +1,9 @@
+
+'use strict';
+
+
 /**
- * Recquire template.
+ * recquire default options
  * 
  * @param name name of global namespace
  * @param index name of index files
@@ -12,14 +16,33 @@
  * 
  */
 
+var dflt = {
+	name : undefined,
+	index : 'index.js',
+	intro : 'intro.js',
+	outro : 'outro.js',
+	rec : true,
+	flat : true,
+	debug : false
+};
 
 
-var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
+/**
+ * recquire template
+ * 
+ * @param <opt> options
+ * 
+ */
+
+var recquire_t = function(opt) {
 
 	var fs = require('fs');
 	var util = require('util');
 	var clc = require('cli-color');
 	var extend = require('node.extend');
+	var assign = function(object, key, value){ object[key] = value; };
+
+	opt = extend({}, dflt, opt);
 
 
 	// DEBUG
@@ -28,7 +51,7 @@ var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 		return function(){
 			console.log(
 				[
-					clc.white(clc.bgBlack(name)),
+					clc.white(clc.bgBlack(opt.name)),
 					clc.green(type),
 					transform(util.format.apply(this, arguments))
 				].join(' ')
@@ -36,23 +59,23 @@ var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 		};
 	};
 	
-	var info = debug ? msg_t('info', clc.blue) : function(){};
-	var action = debug ? msg_t('action', clc.magenta) : function(){};
+	var info = opt.debug ? msg_t('info', clc.blue) : function(){};
+	var action = opt.debug ? msg_t('action', clc.magenta) : function(){};
 
 	var recquire = function(dir, exports, level) {
 		fs.readdirSync(dir).forEach(function(file) {
 
-			if (file === intro || file === outro) return;
+			if (file === opt.intro || file === opt.outro) return;
 
 			var path = dir + file;
 			if (fs.lstatSync(path).isDirectory()) {
-				if (fs.existsSync(path + '/' + index)) {
-					if(rec){
+				if (fs.existsSync(path + '/' + opt.index)) {
+					if(opt.rec){
 						// DEBUG
 						info("index file found in '%s'", path);
 						action("@ exports['%s'] = require('%s');", file, path);
 
-						exports[file] = require(path);
+						assign(exports, file, require(path));
 					}
 					else{
 						// DEBUG
@@ -64,14 +87,14 @@ var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 				}
 				else{
 
-					var target = rec ? exports[file] = {} : exports;
+					var target = opt.rec ? exports[file] = {} : exports;
 
 					// DEBUG
 					info("no index file found in '%s'", path);
 					action(
 						"@ recquire('%s/', %s, %d);",
 						path,
-						rec ? util.format("exports['%s'] = {}", file) : 'exports',
+						opt.rec ? util.format("exports['%s'] = {}", file) : 'exports',
 						level + 1
 					);
 
@@ -79,9 +102,9 @@ var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 				}
 
 			}
-			else if (level >= 0 && file.match(/.+\.js$/g) !== null && file !== index) {
+			else if (level >= 0 && file.match(/.+\.js$/g) !== null && file !== opt.index) {
 
-				if(flat){
+				if(opt.flat){
 
 					// DEBUG
 					info(".js file '%s'", path);
@@ -96,7 +119,7 @@ var recquire_t = function(name, index, intro, outro, rec, flat, debug) {
 					info(".js file '%s'", path);
 					action("@ exports['%s'] = require('%s');", name, path);
 
-					exports[name] = require(path);
+					assign(exports, name, require(path));
 				}
 			}
 		});
