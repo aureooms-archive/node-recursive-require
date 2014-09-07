@@ -1,7 +1,7 @@
 {
 	"name": "aureooms-node-recursive-require",
 	"description": "recursive require for node",
-	"version": "0.2.1",
+	"version": "1.0.0",
 	"license": "AGPL-3.0",
 	"author": "aureooms",
 	"repository": {
