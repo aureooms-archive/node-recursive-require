@@ -1,13 +1,24 @@
 {
+	"name": "aureooms-node-recursive-require",
+	"description": "recursive require for node",
 	"version": "0.2.1",
+	"license": "AGPL-3.0",
+	"author": "aureooms",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aureooms/node-recursive-require.git"
+	},
+	"homepage": "https://aureooms.github.io/node-recursive-require",
 	"keywords": [
 		"node",
 		"recursive",
 		"require",
 		"auto"
 	],
-	"name": "aureooms-node-recursive-require",
-	"homepage": "https://aureooms.github.io/node-recursive-require",
+	"dependencies": {
+		"cli-color": "^0.3.2",
+		"node.extend": "^1.0.10"
+	},
 	"devDependencies": {
 		"qunit": "^0.6.3",
 		"codeclimate-test-reporter": "0.0.3",
@@ -15,22 +26,11 @@
 		"istanbul": "^0.2.11",
 		"optimist": "^0.6.1"
 	},
-	"dependencies": {
-		"cli-color": "^0.3.2",
-		"node.extend": "^1.0.10"
-	},
 	"main": "js/index.js",
-	"repository": {
-		"type": "git",
-		"url": "https://aureooms@github.com/aureooms/node-recursive-require.git"
-	},
-	"author": "aureooms",
-	"bugs": {
-		"url": "https://github.com/aureooms/node-recursive-require/issues"
-	},
 	"scripts": {
 		"test": "node test/js/run.js"
 	},
-	"license": "GPL v3",
-	"description": "recursive require for node"
+	"bugs": {
+		"url": "https://github.com/aureooms/node-recursive-require/issues"
+	}
 }

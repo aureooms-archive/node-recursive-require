@@ -3,7 +3,7 @@
 
 
 /**
- * recuire default options
+ * recquire default options
  * 
  * @param name name of global namespace
  * @param index name of index files
@@ -28,13 +28,13 @@ var dflt = {
 
 
 /**
- * recuire template
+ * recquire template
  * 
  * @param <opt> options
  * 
  */
 
-var recuire_t = function(opt) {
+var recquire_t = function(opt) {
 
 	var fs = require('fs');
 	var util = require('util');
@@ -67,7 +67,7 @@ var recuire_t = function(opt) {
 		fn.apply(null, args);
 	};
 
-	var recuire = function(dir, exports, level, handler) {
+	var recquire = function(dir, exports, level, handler) {
 
 		if (handler === undefined) {
 			handler = dflt_action_handler;
@@ -102,13 +102,13 @@ var recuire_t = function(opt) {
 					// DEBUG
 					info("no index file found in '%s'", path);
 					action(
-						"@ recuire('%s/', %s, %d);",
+						"@ recquire('%s/', %s, %d);",
 						path,
 						opt.rec ? util.format("exports['%s'] = {}", file) : 'exports',
 						level + 1
 					);
 
-					recuire(path + '/', target, level + 1, handler);
+					recquire(path + '/', target, level + 1, handler);
 				}
 
 			}
@@ -135,8 +135,8 @@ var recuire_t = function(opt) {
 		});
 	};
 
-	return recuire;
+	return recquire;
 
 };
 
-module.exports = recuire_t;
+module.exports = recquire_t;
