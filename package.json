@@ -6,8 +6,8 @@
 		"require",
 		"auto"
 	],
-	"name": "recquire",
-	"homepage": "https://aureooms.github.io/recquire",
+	"name": "aureooms-node-recursive-require",
+	"homepage": "https://aureooms.github.io/node-recursive-require",
 	"devDependencies": {
 		"qunit": "^0.6.3",
 		"codeclimate-test-reporter": "0.0.3",
@@ -22,15 +22,15 @@
 	"main": "js/index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://aureooms@github.com/aureooms/recquire.git"
+		"url": "https://aureooms@github.com/aureooms/node-recursive-require.git"
 	},
-	"author": "Ooms Aur\u00e9lien <aurelien.ooms@gmail.com> (http://aureooms.wolkom.net/)",
+	"author": "aureooms",
 	"bugs": {
-		"url": "https://github.com/aureooms/recquire/issues"
+		"url": "https://github.com/aureooms/node-recursive-require/issues"
 	},
 	"scripts": {
 		"test": "node test/js/run.js"
 	},
-	"license": "GPL v2",
+	"license": "GPL v3",
 	"description": "recursive require for node"
 }

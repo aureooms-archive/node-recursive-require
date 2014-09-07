@@ -1,10 +1,10 @@
-[recquire](http://aureooms.github.io/recquire)
+[node-recursive-require](http://aureooms.github.io/node-recursive-require)
 ========
 
-Recursive require for node
+recursive require for node
 
-[![Build Status](https://drone.io/github.com/aureooms/recquire/status.png)](https://drone.io/github.com/aureooms/recquire/latest)
-[![Coverage Status](https://coveralls.io/repos/aureooms/recquire/badge.png)](https://coveralls.io/r/aureooms/recquire)
-[![Dependencies Status](https://david-dm.org/aureooms/recquire.png)](https://david-dm.org/aureooms/recquire#info=dependencies)
-[![devDependencies Status](https://david-dm.org/aureooms/recquire/dev-status.png)](https://david-dm.org/aureooms/recquire#info=devDependencies)
-[![Code Climate](https://codeclimate.com/github/aureooms/recquire.png)](https://codeclimate.com/github/aureooms/recquire)
+[![Build Status](https://travis-ci.org/aureooms/node-recursive-require.svg)](https://travis-ci.org/aureooms/node-recursive-require)
+[![Coverage Status](https://coveralls.io/repos/aureooms/node-recursive-require/badge.png)](https://coveralls.io/r/aureooms/node-recursive-require)
+[![Dependencies Status](https://david-dm.org/aureooms/node-recursive-require.png)](https://david-dm.org/aureooms/node-recursive-require#info=dependencies)
+[![devDependencies Status](https://david-dm.org/aureooms/node-recursive-require/dev-status.png)](https://david-dm.org/aureooms/node-recursive-require#info=devDependencies)
+[![Code Climate](https://codeclimate.com/github/aureooms/node-recursive-require.png)](https://codeclimate.com/github/aureooms/node-recursive-require)

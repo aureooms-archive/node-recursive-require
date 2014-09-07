@@ -33,5 +33,5 @@ for(var i = 0; i < argv._.length; ++i){
 if(argv._.length === 0) argv._.push('src/all.js');
 
 for(var i = 0; i < argv._.length; ++i){
-	run(argv._[i], 'recquire_t');
+	run(argv._[i], 'recuire_t');
 }

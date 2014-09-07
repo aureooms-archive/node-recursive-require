@@ -19,9 +19,9 @@ test('ff', function (assert) {
 		flat : false,
 		debug : true
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -1);
+	recuire(__dirname + '/test-namespace/', namespace, -1);
 
 	var ref = {
 		file1 : {
@@ -51,9 +51,9 @@ test('ft', function (assert) {
 		flat : true,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -1);
+	recuire(__dirname + '/test-namespace/', namespace, -1);
 
 	var ref = {
 		prop1 : true,
@@ -79,9 +79,9 @@ test('tf', function (assert) {
 		flat : false,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -1);
+	recuire(__dirname + '/test-namespace/', namespace, -1);
 
 	var ref = {
 		dir1 : {
@@ -117,9 +117,9 @@ test('tt', function (assert) {
 		flat : true,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -1);
+	recuire(__dirname + '/test-namespace/', namespace, -1);
 
 	var ref = {
 		dir1 : {
@@ -151,9 +151,9 @@ test('ff-2', function (assert) {
 		flat : false,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -2);
+	recuire(__dirname + '/test-namespace/', namespace, -2);
 
 	var ref = {
 		file2 : {
@@ -180,9 +180,9 @@ test('ft-2', function (assert) {
 		flat : true,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -2);
+	recuire(__dirname + '/test-namespace/', namespace, -2);
 
 	var ref = {
 		prop2 : true,
@@ -207,9 +207,9 @@ test('tf-2', function (assert) {
 		flat : false,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -2);
+	recuire(__dirname + '/test-namespace/', namespace, -2);
 
 	var ref = {
 		dir1 : {
@@ -242,9 +242,9 @@ test('tt-2', function (assert) {
 		flat : true,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
-	recquire(__dirname + '/test-namespace/', namespace, -2);
+	recuire(__dirname + '/test-namespace/', namespace, -2);
 
 	var ref = {
 		dir1 : {
@@ -275,7 +275,7 @@ test('ft-handler', function (assert) {
 		flat : true,
 		debug : undefined
 	};
-	var recquire = recquire_t(opt);
+	var recuire = recuire_t(opt);
 	var namespace = {};
 
 	var actions = [];
@@ -284,7 +284,7 @@ test('ft-handler', function (assert) {
 		actions.push(arguments);
 	};
 
-	recquire(__dirname + '/test-namespace/', namespace, -1, handler);
+	recuire(__dirname + '/test-namespace/', namespace, -1, handler);
 
 	var include = function(path, fn, args){
 		args.push(require(path));
