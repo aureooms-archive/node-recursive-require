@@ -4,7 +4,7 @@
 
 /**
  * recquire default options
- * 
+ *
  * @param name name of global namespace
  * @param index name of index files
  * @param intro name of intro files
@@ -12,8 +12,8 @@
  * @param rec whether dirs should have their own namespace
  * @param flat whether files should have their own namespace
  * @param debug flag whether or not debug messages should be printed
- * 
- * 
+ *
+ *
  */
 
 var dflt = {
@@ -29,16 +29,15 @@ var dflt = {
 
 /**
  * recquire template
- * 
+ *
  * @param <opt> options
- * 
+ *
  */
 
 var recquire_t = function(opt) {
 
 	var fs = require('fs');
 	var util = require('util');
-	var clc = require('cli-color');
 	var extend = require('node.extend');
 	var assign = function(object, key, value){ object[key] = value; };
 
@@ -46,21 +45,20 @@ var recquire_t = function(opt) {
 
 
 	// DEBUG
-	var msg_t = function(type, transform){
-		// transform = transform || function(s){return s;};
+	var msg_t = function(type){
 		return function(){
 			console.log(
 				[
-					clc.white(clc.bgBlack(opt.name)),
-					clc.green(type),
-					transform(util.format.apply(this, arguments))
+					opt.name,
+					type,
+					util.format.apply(this, arguments)
 				].join(' ')
 			);
 		};
 	};
-	
-	var info = opt.debug ? msg_t('info', clc.blue) : function(){};
-	var action = opt.debug ? msg_t('action', clc.magenta) : function(){};
+
+	var info = opt.debug ? msg_t('info') : function(){};
+	var action = opt.debug ? msg_t('action') : function(){};
 
 	var dflt_action_handler = function(path, fn, args){
 		args.push(require(path));
