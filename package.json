@@ -19,10 +19,10 @@
 		"node.extend": "^1.1.2"
 	},
 	"devDependencies": {
-		"qunit": "^0.7.4",
-		"codeclimate-test-reporter": "^0.0.4",
+		"qunit": "^0.9.1",
+		"codeclimate-test-reporter": "^0.4.0",
 		"coveralls": "^2.11.2",
-		"istanbul": "^0.3.2",
+		"istanbul": "^0.4.5",
 		"optimist": "^0.6.1"
 	},
 	"main": "js/index.js",
